@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+wwMJhYvkVx5q7xeYi2OHLFwjSE4ZRzlsQdqTC/5i0w=",
+  "Hash": "C9yTrmdJtNChkcSYC9/Bx7eK51RfJzWPdDmCcgQWpTk=",
   "Source": "Ecommerce.Web",
   "BasePath": "_content/Ecommerce.Web",
   "Mode": "Default",
@@ -1907,6 +1907,27 @@
       "OriginalItemSpec": "wwwroot/img/product/d5e47841-89ee-4fa8-8872-e20242cb6a7c.jpeg"
     },
     {
+      "Identity": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/dc666a49-6842-40f3-ad6d-c403d21eaf3f.jpeg",
+      "SourceId": "Ecommerce.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/",
+      "BasePath": "_content/Ecommerce.Web",
+      "RelativePath": "img/product/dc666a49-6842-40f3-ad6d-c403d21eaf3f#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "20tnigvmk8",
+      "Integrity": "kvR4tNlwNRYtxN9ao5iCt+mUj/NHfMUZRfr1qzFXyfI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/product/dc666a49-6842-40f3-ad6d-c403d21eaf3f.jpeg"
+    },
+    {
       "Identity": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/e03d964c-4abd-4283-8d20-aa72abbf8114.jpeg",
       "SourceId": "Ecommerce.Web",
       "SourceType": "Discovered",
@@ -1926,6 +1947,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/img/product/e03d964c-4abd-4283-8d20-aa72abbf8114.jpeg"
+    },
+    {
+      "Identity": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/e6bd21d3-3128-433c-8d71-cd3a4ced0566.png",
+      "SourceId": "Ecommerce.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/",
+      "BasePath": "_content/Ecommerce.Web",
+      "RelativePath": "img/product/e6bd21d3-3128-433c-8d71-cd3a4ced0566#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "t4pfwjha7h",
+      "Integrity": "/QjjepXeRiJ7LZXMPWVMQwBKo38kiwutryYmEdUI6oA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/img/product/e6bd21d3-3128-433c-8d71-cd3a4ced0566.png"
     },
     {
       "Identity": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/js/scripts.js",
@@ -6682,6 +6724,88 @@
       ]
     },
     {
+      "Route": "img/product/dc666a49-6842-40f3-ad6d-c403d21eaf3f.20tnigvmk8.jpeg",
+      "AssetFile": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/dc666a49-6842-40f3-ad6d-c403d21eaf3f.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2708839"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kvR4tNlwNRYtxN9ao5iCt+mUj/NHfMUZRfr1qzFXyfI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Feb 2025 04:41:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "20tnigvmk8"
+        },
+        {
+          "Name": "label",
+          "Value": "img/product/dc666a49-6842-40f3-ad6d-c403d21eaf3f.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kvR4tNlwNRYtxN9ao5iCt+mUj/NHfMUZRfr1qzFXyfI="
+        }
+      ]
+    },
+    {
+      "Route": "img/product/dc666a49-6842-40f3-ad6d-c403d21eaf3f.jpeg",
+      "AssetFile": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/dc666a49-6842-40f3-ad6d-c403d21eaf3f.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2708839"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kvR4tNlwNRYtxN9ao5iCt+mUj/NHfMUZRfr1qzFXyfI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 25 Feb 2025 04:41:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kvR4tNlwNRYtxN9ao5iCt+mUj/NHfMUZRfr1qzFXyfI="
+        }
+      ]
+    },
+    {
       "Route": "img/product/e03d964c-4abd-4283-8d20-aa72abbf8114.0qwu7fpl2g.jpeg",
       "AssetFile": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/e03d964c-4abd-4283-8d20-aa72abbf8114.jpeg",
       "Selectors": [],
@@ -6760,6 +6884,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-KNQ+xhxWLLVPaZdEfYWaFbk1PwEH7pKkATc9gd+zi/4="
+        }
+      ]
+    },
+    {
+      "Route": "img/product/e6bd21d3-3128-433c-8d71-cd3a4ced0566.png",
+      "AssetFile": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/e6bd21d3-3128-433c-8d71-cd3a4ced0566.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "885723"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/QjjepXeRiJ7LZXMPWVMQwBKo38kiwutryYmEdUI6oA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Feb 2025 19:46:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-/QjjepXeRiJ7LZXMPWVMQwBKo38kiwutryYmEdUI6oA="
+        }
+      ]
+    },
+    {
+      "Route": "img/product/e6bd21d3-3128-433c-8d71-cd3a4ced0566.t4pfwjha7h.png",
+      "AssetFile": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/e6bd21d3-3128-433c-8d71-cd3a4ced0566.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "885723"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"/QjjepXeRiJ7LZXMPWVMQwBKo38kiwutryYmEdUI6oA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Feb 2025 19:46:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "t4pfwjha7h"
+        },
+        {
+          "Name": "label",
+          "Value": "img/product/e6bd21d3-3128-433c-8d71-cd3a4ced0566.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-/QjjepXeRiJ7LZXMPWVMQwBKo38kiwutryYmEdUI6oA="
         }
       ]
     },

@@ -81,8 +81,16 @@
       "PackagePath": "staticwebassets/img/product/d5e47841-89ee-4fa8-8872-e20242cb6a7c.jpeg"
     },
     {
+      "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/dc666a49-6842-40f3-ad6d-c403d21eaf3f.jpeg",
+      "PackagePath": "staticwebassets/img/product/dc666a49-6842-40f3-ad6d-c403d21eaf3f.jpeg"
+    },
+    {
       "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/e03d964c-4abd-4283-8d20-aa72abbf8114.jpeg",
       "PackagePath": "staticwebassets/img/product/e03d964c-4abd-4283-8d20-aa72abbf8114.jpeg"
+    },
+    {
+      "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/e6bd21d3-3128-433c-8d71-cd3a4ced0566.png",
+      "PackagePath": "staticwebassets/img/product/e6bd21d3-3128-433c-8d71-cd3a4ced0566.png"
     },
     {
       "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/js/scripts.js",

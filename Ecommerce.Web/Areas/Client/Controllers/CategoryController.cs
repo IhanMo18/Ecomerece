@@ -1,22 +1,15 @@
 
 using Dashboard.Models;
-using Ecommerce.Domain.Interface.Repository;
+using Ecommerce.Domain.Interface.Service;
 using Ecommerce.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dashboard.Areas.Client.Controllers;
 
 [Area("Client")]
-public class CategoryController : Controller
+public class CategoryController(ILogger<CategoryController> logger
+    ,ICategoryService categoryService) : Controller
 {
-    public readonly ILogger<CategoryController> _logger;
-    private readonly ICategoryRepository _categoryRepository;
-
-    public CategoryController(ILogger<CategoryController> logger,ICategoryRepository categoryRepository)
-    {
-        _logger = logger;
-        _categoryRepository = categoryRepository;
-    }
     
     public IActionResult CreateCategory()
     {
@@ -32,7 +25,7 @@ public class CategoryController : Controller
         };
         if (ModelState.IsValid)
         {
-            _categoryRepository.Update(category);
+            categoryService.Update(category);
             return RedirectToAction("Index","Home");
         }
         

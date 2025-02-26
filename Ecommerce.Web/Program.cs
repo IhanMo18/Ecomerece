@@ -6,6 +6,9 @@ using Ecommerce.Domain.Interface.Repository;
 using Ecommerce.Domain.Interface.Service;
 using Ecommerce.Repository.Repositories;
 using Ecommerce.Services.CartService;
+using Ecommerce.Services.CategoryService;
+using Ecommerce.Services.ProductService;
+using Ecommerce.Services.ReviewService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,7 +30,9 @@ builder.Services.AddScoped<IReviewsRepository,ReviewsRepository>();
 builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddScoped<ICartService, CartService>();
-
+builder.Services.AddScoped<IProductService,ProductService>();
+builder.Services.AddScoped<ICategoryService,CategoryService>();
+builder.Services.AddScoped<IReviewService,ReviewService>();
 
 var app = builder.Build();
 

@@ -8,17 +8,20 @@ public class ProductVm
 {
 
     [ValidateNever]
-    public Ecommerce.Domain.Models.Products Product { get; set; }
+    public Products Product { get; set; }
     
     [ValidateNever]
     public IEnumerable<SelectListItem> Categories { get; set; }
     
     
     [ValidateNever]
-    public IEnumerable<Category> AllCategories { get; set; }
+    public Category Category { get; set; }
     
     [ValidateNever]
     
-    public Reviews Reviews { get; set; }
+    public ICollection<Reviews>? AllReviews { get; set; }
+    
+    [ValidateNever]
+    public Reviews Review { get; set; }
     
 }

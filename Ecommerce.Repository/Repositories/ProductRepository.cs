@@ -5,18 +5,23 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Repository.Repositories;
 
-public class ProductRepository : BaseRepository<Products>,IProductRepository
+public class ProductRepository(ApplicationDbContext dbContext) : BaseRepository<Products>(dbContext), IProductRepository
 {
-    public ProductRepository(ApplicationDbContext dbContext) : base(dbContext)
+    public Products? GetProductsWithCategory(int productId)
     {
+        var productWithCategory = _dbContext.Products
+            .Include(obj => obj.Category)
+            .SingleOrDefault(product => product.Id == productId); 
+        Console.WriteLine($"Producto con ID {productId} no encontrado.");
+        return productWithCategory;
     }
     
-    
-    public Products? GetProductsWhitCategory(int id)
+    public Products? GetProductsWithAllReviews(int productId)
     {
-        Products? productWithCategory = _dbContext.Products
+        var productWithCategory = _dbContext.Products
             .Include(obj => obj.Category)
-            .FirstOrDefault(product => product.Id == id); // Asegúrate de que 'Category' es la propiedad correct
+            .Include(obj=>obj.reviews)
+            .SingleOrDefault(product => product.Id == productId);
         return productWithCategory;
     }
     

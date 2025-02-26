@@ -8,6 +8,8 @@ public class Reviews
     public int IdReview { get; set; }
     public DateTime Date { get; set; }
     public int Stars { get; set; }
+    
+    public string Message { get; set; }
     public int ProductId { get; set; }
     public Products Product { get; set; }
     public int UserId { get; set; }

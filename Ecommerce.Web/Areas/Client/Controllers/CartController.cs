@@ -34,7 +34,7 @@ public class CartController(ICartService cartService,IProductRepository productR
             Cart? cart  = await cartService.SearchCartBySessionid(sessionId);
             
             // Obtener el producto que se desea agregar
-            Products? product = productRepository.GetProductsWhitCategory(productId);
+            Products? product = productRepository.GetProductsWithCategory(productId);
             if (product == null)
             {
                 return NotFound("Producto no encontrado.");

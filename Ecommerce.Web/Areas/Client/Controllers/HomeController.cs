@@ -1,6 +1,5 @@
 using System.Diagnostics;
 using Dashboard.Models;
-using Ecommerce.Domain.Interface.Repository;
 using Ecommerce.Domain.Interface.Service;
 using Ecommerce.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -11,8 +10,8 @@ namespace Dashboard.Areas.Client.Controllers;
 [Area("Client")]
 public class HomeController(
     ILogger<HomeController> logger,
-    IProductRepository productRepository,
-    ICategoryRepository categoryRepository,
+    IProductService productService,
+    ICategoryService categoryService,
     IWebHostEnvironment webHostEnvironment,
     ICartService cartService)
     : Controller
@@ -22,9 +21,9 @@ public class HomeController(
     public async Task<IActionResult> Index()
     {
         List<Products> productWhitCategoryList = new List<Products>();
-        foreach (var product in await productRepository.GetAllAsync() )
+        foreach (var product in await productService.GetAllAsync() )
         {
-           var productWhitCategory = productRepository.GetProductsWhitCategory(product.Id);
+           var productWhitCategory = productService.GetProductsWithCategory(product.Id);
            if (productWhitCategory!=null)productWhitCategoryList.Add(productWhitCategory);
         }
         
@@ -34,7 +33,7 @@ public class HomeController(
     [AutoValidateAntiforgeryToken]
     public async Task<IActionResult> Create()
     {
-        var listCategories = await categoryRepository.GetAllAsync();
+        var listCategories = await categoryService.GetAllAsync();
         var productVm = new ProductVm()
         {
             Categories = listCategories.Select(category => new SelectListItem()
@@ -46,11 +45,12 @@ public class HomeController(
         };
         var sessionId = Request.Cookies["SessionId"];
         if (sessionId == null) return BadRequest("Error,session Id sin establecer");
-        
         var cart = await cartService.SearchCartBySessionid(sessionId);
-        cart.Products ??= new List<Products>();
+        
+        if (cart == null) return View(productVm);
+        
+        cart.Products = new List<Products>();
         return View(productVm);
-
     }
     
     
@@ -59,7 +59,7 @@ public class HomeController(
     {
         if (!ModelState.IsValid)
         {
-            var listCategories = await categoryRepository.GetAllAsync();
+            var listCategories = await categoryService.GetAllAsync();
             TempData["Error"] = true;
 
             IEnumerable<SelectListItem> categories = listCategories.Select(category =>
@@ -107,7 +107,7 @@ public class HomeController(
             productsVm.Product.ImgUrl = "/img/product/" + fileName;
         }
         
-        productRepository.Update(productsVm.Product);
+        productService.Update(productsVm.Product);
 
         TempData["ProductAddSucces"] = true;
         
@@ -116,23 +116,21 @@ public class HomeController(
 
     
     
-    public async  Task<IActionResult> Details(int id)
+    public IActionResult Details(int productId)
     {
         if (ModelState.IsValid)
         {
-            var product = await productRepository.GetAsync(id);
-            var category = await categoryRepository.GetAllAsync();
-            if (product!=null)
-            {
-                var productVm = new ProductVm()
-                {
-                    AllCategories = category,
-                    Product = product
-                };
-                return View(productVm);
-            }
+            var productWhitAllReviews = productService.GetProductsWithAllReviews(productId);
+            var productWhitCategory =   productService.GetProductsWithCategory(productId);
 
-            return NotFound();
+            if (productWhitCategory == null && productWhitAllReviews == null) return BadRequest();
+           
+            var productVm = new ProductVm()
+            {
+                Category = productWhitCategory.Category,
+                AllReviews = productWhitAllReviews?.reviews,
+                Product = productWhitCategory
+            }; return View(productVm);
         }
         return View();
     }

@@ -9,4 +9,9 @@ public class ReviewsRepository : BaseRepository<Reviews>,IReviewsRepository
     public ReviewsRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
     }
+
+    public Products SearchReviewByProducts(int productId)
+    {
+        throw new NotImplementedException();
+    }
 }
