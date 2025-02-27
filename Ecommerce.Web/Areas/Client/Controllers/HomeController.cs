@@ -20,7 +20,7 @@ public class HomeController(
 
     public async Task<IActionResult> Index()
     {
-        List<Products> productWhitCategoryList = new List<Products>();
+        List<Product> productWhitCategoryList = new List<Product>();
         foreach (var product in await productService.GetAllAsync() )
         {
            var productWhitCategory = productService.GetProductsWithCategory(product.Id);
@@ -41,15 +41,10 @@ public class HomeController(
                 Text = category.Name,
                 Value = category.Id.ToString()
             }),
-            Product = new Products()
+            Product = new Product()
         };
         var sessionId = Request.Cookies["SessionId"];
         if (sessionId == null) return BadRequest("Error,session Id sin establecer");
-        var cart = await cartService.SearchCartBySessionid(sessionId);
-        
-        if (cart == null) return View(productVm);
-        
-        cart.Products = new List<Products>();
         return View(productVm);
     }
     

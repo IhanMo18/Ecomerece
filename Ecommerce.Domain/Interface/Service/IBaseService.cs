@@ -7,4 +7,5 @@ public interface IBaseService<T> where T : class
     public Task<T?> GetByIdAsync(int id);
     public void Save();
     public void Update(T? obj);
+    public void Remove(T obj);
 }

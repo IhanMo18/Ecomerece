@@ -20,15 +20,15 @@ builder.Services.AddControllersWithViews(options =>
 });
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(
     builder.Configuration.GetConnectionString("PostgresConnection")));
-builder.Services.AddScoped<IProductRepository,ProductRepository>();
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddScoped<ICartRepository, CartRepository>();
-builder.Services.AddScoped<INotificationsRepository,NotificationsRepository>();
-builder.Services.AddScoped<IOrderDetailRepository,OrderDetailRepository>();
-builder.Services.AddScoped<IOrderRepository,OrderRepository>();
-builder.Services.AddScoped<IReviewsRepository,ReviewsRepository>();
-builder.Services.AddScoped<IUserRepository,UserRepository>();
-builder.Services.AddScoped<ICartRepository, CartRepository>();
+builder.Services.AddScoped<IProductBaseRepository,ProductBaseRepository>();
+builder.Services.AddScoped<ICategoryBaseRepository, CategoryBaseRepository>();
+builder.Services.AddScoped<ICartBaseRepository, CartBaseRepository>();
+builder.Services.AddScoped<INotificationsBaseRepository,NotificationsBaseRepository>();
+builder.Services.AddScoped<IOrderDetailBaseRepository,OrderDetailBaseRepository>();
+builder.Services.AddScoped<IOrderBaseRepository,OrderBaseRepository>();
+builder.Services.AddScoped<IReviewsBaseRepository,ReviewsBaseRepository>();
+builder.Services.AddScoped<IUserBaseRepository,UserBaseRepository>();
+builder.Services.AddScoped<ICartBaseRepository, CartBaseRepository>();
 builder.Services.AddScoped<ICartService, CartService>();
 builder.Services.AddScoped<IProductService,ProductService>();
 builder.Services.AddScoped<ICategoryService,CategoryService>();

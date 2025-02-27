@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets/assets/favicon.ico"
     },
     {
+      "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/css/BestProductStyle.css",
+      "PackagePath": "staticwebassets/css/BestProductStyle.css"
+    },
+    {
+      "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/css/LoginCss.css",
+      "PackagePath": "staticwebassets/css/LoginCss.css"
+    },
+    {
       "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/css/StyleCart.css",
       "PackagePath": "staticwebassets/css/StyleCart.css"
     },
@@ -37,6 +45,10 @@
       "PackagePath": "staticwebassets/img/arrangement-black-friday-shopping-carts-with-copy-space.jpg"
     },
     {
+      "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/her.jpg",
+      "PackagePath": "staticwebassets/img/her.jpg"
+    },
+    {
       "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/019ea50a-bc54-421b-9f2f-4e0fbb2364df.jpeg",
       "PackagePath": "staticwebassets/img/product/019ea50a-bc54-421b-9f2f-4e0fbb2364df.jpeg"
     },
@@ -55,6 +67,10 @@
     {
       "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/40e7b7aa-4628-4082-b207-025fd5ba5f61.jpeg",
       "PackagePath": "staticwebassets/img/product/40e7b7aa-4628-4082-b207-025fd5ba5f61.jpeg"
+    },
+    {
+      "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/56f57af6-43c5-4538-ad1e-dc5ae8f92659.png",
+      "PackagePath": "staticwebassets/img/product/56f57af6-43c5-4538-ad1e-dc5ae8f92659.png"
     },
     {
       "Id": "/Users/ihan/Desktop/C#Projects/Ecommerce.Web/wwwroot/img/product/578eb5a2-fed1-4f93-96d9-cbe43db7acbf.jpg",

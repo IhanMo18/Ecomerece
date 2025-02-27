@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Repository.Repositories;
 
-public class ProductRepository(ApplicationDbContext dbContext) : BaseRepository<Products>(dbContext), IProductRepository
+public class ProductBaseRepository(ApplicationDbContext dbContext) : BaseRepository<Product>(dbContext), IProductBaseRepository
 {
-    public Products? GetProductsWithCategory(int productId)
+    public Product? GetProductsWithCategory(int productId)
     {
         var productWithCategory = _dbContext.Products
             .Include(obj => obj.Category)
@@ -16,7 +16,7 @@ public class ProductRepository(ApplicationDbContext dbContext) : BaseRepository<
         return productWithCategory;
     }
     
-    public Products? GetProductsWithAllReviews(int productId)
+    public Product? GetProductsWithAllReviews(int productId)
     {
         var productWithCategory = _dbContext.Products
             .Include(obj => obj.Category)

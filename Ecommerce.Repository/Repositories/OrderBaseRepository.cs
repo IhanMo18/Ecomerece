@@ -6,9 +6,9 @@ using Ecommerce.Repository.Repositories;
 
 namespace Dashboard.Repository;
 
-public class OrderRepository : BaseRepository<Order>,IOrderRepository
+public class OrderBaseRepository : BaseRepository<Order>,IOrderBaseRepository
 {
-    public OrderRepository(ApplicationDbContext dbContext) : base(dbContext)
+    public OrderBaseRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
     }
 }

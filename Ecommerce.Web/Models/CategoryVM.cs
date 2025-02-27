@@ -11,5 +11,5 @@ public class CategoryVM
     
     
     [ValidateNever]
-    public List<Products> ProductsList { get; set; }
+    public List<Product> ProductsList { get; set; }
 }

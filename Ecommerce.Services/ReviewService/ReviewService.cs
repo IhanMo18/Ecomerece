@@ -4,10 +4,10 @@ using Ecommerce.Domain.Models;
 
 namespace Ecommerce.Services.ReviewService;
 
-public class ReviewService(IReviewsRepository repository,
-    IProductService productService) :BaseService<Reviews>(repository),IReviewService
+public class ReviewService(IReviewsBaseRepository baseRepository,
+    IProductService productService) :BaseService<Reviews>(baseRepository),IReviewService
 {
-    public Products? SearchReviewByProducts(int productId)
+    public Product? SearchReviewByProducts(int productId)
     {
       return productService.GetProductsWithAllReviews(productId);
     }

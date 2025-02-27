@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Ecommerce.Domain.Models;
 
-public class Products
+public class Product
 {
     
     [Key][Required]
@@ -23,10 +23,12 @@ public class Products
     public int InExist{ get; set;}
     [Display(Name = "Product Image")]
     public string ImgUrl { get; set; }
+    
+    public bool ShowProduct { get; set; }
     public int CategoryId { get; set; }
     public Category Category { get; set; }
     public ICollection<OrderDetail> OrderDetails { get; set; }
     public ICollection<Reviews> reviews { get; set; }
     public int?  CartId { get; set; }
-    public Cart Cart { get; set; }
+    public ICollection<ProductCart> ProductCart { get; set; }
 }

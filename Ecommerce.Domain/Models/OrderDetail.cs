@@ -14,7 +14,7 @@ public class OrderDetail
     public Order Order{ get; set; }
 
     public int ProductId;
-    public Products Product{ get; set; }
+    public Product Product{ get; set; }
    
     
 }

@@ -5,7 +5,7 @@ namespace Ecommerce.Domain.Models;
 public class Notifications
 {
     [Key]
-    public int NotidicationsId  { get; set; }
+    public int NotificationsId  { get; set; }
     public String Message { get; set; }
     public DateTime Date { get; set; }
     public bool Read { get; set; }

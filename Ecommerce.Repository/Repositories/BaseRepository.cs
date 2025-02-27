@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Repository.Repositories;
 
-public class BaseRepository<T> : IRepository<T> where T : class
+public class BaseRepository<T> : IBaseRepository<T> where T : class
 {
     protected ApplicationDbContext _dbContext;
     private DbSet<T> _dbSet;
@@ -29,6 +29,10 @@ public class BaseRepository<T> : IRepository<T> where T : class
     {
         _dbSet.Update(obj);
         _dbContext.SaveChanges();
+    }
+    public void Remove(T obj)
+    {
+        _dbContext.Remove(obj);
     }
 
     public void Save()

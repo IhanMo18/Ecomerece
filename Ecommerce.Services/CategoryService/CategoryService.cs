@@ -4,7 +4,7 @@ using Ecommerce.Domain.Models;
 
 namespace Ecommerce.Services.CategoryService;
 
-public class CategoryService(ICategoryRepository repository) : BaseService<Category>(repository),ICategoryService
+public class CategoryService(ICategoryBaseRepository baseRepository) : BaseService<Category>(baseRepository),ICategoryService
 {
     
 }

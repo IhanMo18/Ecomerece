@@ -4,10 +4,9 @@ using Ecommerce.Domain.Models;
 
 namespace Ecommerce.Repository.Repositories;
 
-public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
+public class UserBaseRepository : BaseRepository<User>,IUserBaseRepository
 {
-    public CategoryRepository(ApplicationDbContext dbContext) : base(dbContext)
+    public UserBaseRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
     }
-    
 }

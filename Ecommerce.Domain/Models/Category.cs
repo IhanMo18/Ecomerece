@@ -9,5 +9,5 @@ public class Category
     [Required]
     public string Name { get; set; }
     [Required]
-    public ICollection<Products> ProductsList { get; set; }
+    public ICollection<Product> ProductsList { get; set; }
 }

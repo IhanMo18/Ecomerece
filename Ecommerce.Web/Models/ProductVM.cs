@@ -8,7 +8,7 @@ public class ProductVm
 {
 
     [ValidateNever]
-    public Products Product { get; set; }
+    public Product Product { get; set; }
     
     [ValidateNever]
     public IEnumerable<SelectListItem> Categories { get; set; }

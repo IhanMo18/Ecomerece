@@ -1,14 +1,15 @@
-﻿@model List<Products> 
+﻿@model List<Product> 
 
 
-<header class="bg-dark back py-5">
+<header class="bg-dark py-5">
     <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Shop in style</h1>
-            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+        <div class="hero text-center text-white">
+            <h1 class="display-4 fw-bolder">Welcome to LuxeBay</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Your Ultimate Shopping Destination!</p>
         </div>
     </div>
 </header>
+
 
 <div class="container col-12 d-flex justify-content-end">
     <div class="col-6">
@@ -67,8 +68,8 @@
         </div>
     </div>
 </section>
-
 <partial name="_ProductRecomended"/>
+<partial name="_BestProductRanking"/>
 
 
 @section sweet

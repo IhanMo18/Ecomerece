@@ -4,16 +4,16 @@ using Ecommerce.Domain.Models;
 
 namespace Ecommerce.Services.ProductService;
 
-public class ProductService(IProductRepository repository) : BaseService<Products>(repository), IProductService
+public class ProductService(IProductBaseRepository baseRepository) : BaseService<Product>(baseRepository), IProductService
 {
 
-    public Products? GetProductsWithCategory(int productId)
+    public Product? GetProductsWithCategory(int productId)
     {
-        return repository.GetProductsWithCategory(productId);
+        return baseRepository.GetProductsWithCategory(productId);
     }
 
-    public Products? GetProductsWithAllReviews(int productId)
+    public Product? GetProductsWithAllReviews(int productId)
     {
-        return repository.GetProductsWithAllReviews(productId);
+        return baseRepository.GetProductsWithAllReviews(productId);
     }
 }

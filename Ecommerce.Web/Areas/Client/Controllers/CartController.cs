@@ -1,14 +1,12 @@
-
 using Ecommerce.Domain.Interface.Repository;
 using Ecommerce.Domain.Interface.Service;
 using Ecommerce.Domain.Models;
-using Ecommerce.Services.CartService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dashboard.Areas.Client.Controllers;
 
 [Area("Client")]
-public class CartController(ICartService cartService,IProductRepository productRepository) : Controller
+public class CartController(ICartService cartService,IProductBaseRepository productBaseRepository) : Controller
 {
    
 
@@ -20,50 +18,61 @@ public class CartController(ICartService cartService,IProductRepository productR
             return BadRequest("Session ID not found");
         }
         var cart = await cartService.SearchCartBySessionid(Request.Cookies["SessionId"]);
-        return View(cart.Products?.ToList());
+       
+        if (cart == null) return View(new Cart() { ProductCart = new List<ProductCart>()});
+        
+        return View(cart);
     }
     
-        public async Task<IActionResult> AddToCart(int productId)
+        public IActionResult AddToCart(int productId)
         {
-            // Obtener el sessionId de la cookie
-            if (!Request.Cookies.TryGetValue("sessionId", out string? sessionId))
+            if(!Request.Cookies.TryGetValue("sessionId", out var sessionId)) return BadRequest();
+            cartService.AddProductToCart(sessionId,productId,1);
+            return  RedirectToAction("Index", "Home");
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> UpdateCartQuantity(int productId, int quantity, int change = 0)
+        {
+            if (!Request.Cookies.TryGetValue("sessionId", out var sessionId))
             {
                 return BadRequest("No se encontró sessionId en la cookie.");
             }
-            // Buscar o Crear el carrito para ese sessionId
-            Cart? cart  = await cartService.SearchCartBySessionid(sessionId);
+
+            var cart = await cartService.SearchCartBySessionid(sessionId);
             
-            // Obtener el producto que se desea agregar
-            Products? product = productRepository.GetProductsWithCategory(productId);
-            if (product == null)
+            var productCart = cart.ProductCart.FirstOrDefault(cp => cp.ProductId == productId);
+            if (productCart == null)
             {
-                return NotFound("Producto no encontrado.");
-            }
-            if (cart != null && cart.Products != null)
-            {
-                // Crear la Lista de Productos en el carrito
-                cart.Products.Add(product);
-                cartService.Update(cart);
-                TempData["AddToCart"] = true;
-                return RedirectToAction("Index","Home");
+                return BadRequest("Producto no encontrado en el carrito.");
             }
 
-            return BadRequest("Error en agreegar a la lista de producctos");
+            // Si se usaron los botones, se ajusta la cantidad
+            if (change != 0)
+            {
+                quantity = productCart.Quantity + change;
+            }
+            
+            productCart.Quantity = Math.Max(1, quantity);
+            cartService.Save();
+
+            return RedirectToAction("Index");
         }
+
 
         public async Task<IActionResult> DeleteProductOnCart(int productId)
         {
-            if (!Request.Cookies.TryGetValue("sessionId", out string? sessionId))
-            {
-                return BadRequest("No se encontró sessionId en la cookie.");
-            }
+            if (!Request.Cookies.TryGetValue("sessionId", out var sessionId)) return BadRequest("No se encontró sessionId en la cookie.");
+            
             var cart = await cartService.SearchCartBySessionid(Request.Cookies["SessionId"]);
+            var productCart = cart.ProductCart.FirstOrDefault(cp => cp.ProductId == productId);
             
-            var products = await productRepository.GetAsync(productId);
-            if (cart.Products == null || !cart.Products.Contains(products)) return BadRequest("Ha Ocurrido un Error");
+            if (productCart == null) return BadRequest("No existe ese producto en el carrito");
             
-            cart.Products.Remove(products);
+            cartService.RemoveProductFromCart(productCart);
+            cart.LastActionTime=DateTime.UtcNow;
             cartService.Update(cart);
+            cartService.Save();
             return RedirectToAction("Index");
         }
 }

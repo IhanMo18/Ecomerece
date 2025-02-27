@@ -4,5 +4,5 @@ namespace Ecommerce.Domain.Interface.Service;
 
 public interface IReviewService : IBaseService<Reviews>
 {
-    public Products? SearchReviewByProducts(int productId);
+    public Product? SearchReviewByProducts(int productId);
 }

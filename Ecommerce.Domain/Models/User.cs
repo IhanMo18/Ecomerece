@@ -6,6 +6,7 @@ public class User
 {
     [Key]
     public int UserId { get; set; }
+    
     [Required][Display(Name = "User Type")]
     public UserType UserType{ get; set; }
     
@@ -19,6 +20,8 @@ public class User
     public  String Email{ get; set; }
     
     public bool AccountStatus{ get; set; }
+    public string SessionId { get; set; }
+    
     public String ImgProfile{ get; set; }
 
     public ICollection<Order> Order{ get; set; }
