@@ -78,7 +78,7 @@ Proximas Implementaciones:
 2. Configurar la cadena de conexión en `appsettings.json`:
    ```json
    "ConnectionStrings": {
-      "PostgresConnection": "Host=localhost;Port=5432;Database=postgres
+      "PostgresConnection": "Host=localhost;Port=5432;Database=postgres"
    }
    ```
 3. Aplicar migraciones y crear la base de datos:
